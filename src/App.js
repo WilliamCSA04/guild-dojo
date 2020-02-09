@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import styled from "styled-components";
 import { shade } from "polished";
 import Input from "./components/Input";
@@ -54,24 +54,36 @@ const SubmitButton = styled(Button)`
   font-weight: bold;
 `;
 
+export const Context = createContext({});
+
 function App() {
+  const [name, setName] = useState("");
+  const inputsContext = {
+    name: {
+      value: name,
+      onChange: setName
+    }
+  };
+  console.log(name);
   return (
     <Main>
       <Form>
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" ariaLabel="name" />
-        <Label htmlFor="age">Age</Label>
-        <Input id="age" type="number" ariaLabel="age" />
-        <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" ariaLabel="email" />
-        <Label htmlFor="password">Password</Label>
-        <Input id="password" type="password" ariaLabel="password" />
-        <Label htmlFor="confirmPassword">Confirm Password</Label>
-        <Input
-          id="confirmPassword"
-          type="password"
-          ariaLabel="confirm password"
-        />
+        <Context.Provider value={inputsContext}>
+          <Label htmlFor="name">Name</Label>
+          <Input id="name" ariaLabel="name" />
+          <Label htmlFor="age">Age</Label>
+          <Input id="age" type="number" ariaLabel="age" />
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" type="email" ariaLabel="email" />
+          <Label htmlFor="password">Password</Label>
+          <Input id="password" type="password" ariaLabel="password" />
+          <Label htmlFor="confirmPassword">Confirm Password</Label>
+          <Input
+            id="confirmPassword"
+            type="password"
+            ariaLabel="confirm password"
+          />
+        </Context.Provider>
         <SubmitButton type="submit" ariaLabel="Submit form">
           Send
         </SubmitButton>

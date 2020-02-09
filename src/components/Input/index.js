@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-
+import { Context } from "../../App";
 const DefaultInput = styled.input`
   border-radius: 0.2rem;
   border: none;
@@ -20,9 +20,12 @@ export default function Input({
   defaultValue,
   placeholder
 }) {
+  const context = useContext(Context)[id];
   return (
     <DefaultInput
       id={id}
+      value={context?.value}
+      onChange={e => context?.onChange(e.currentTarget.value)}
       className={className}
       type={type}
       ariaLabel={ariaLabel}
@@ -35,7 +38,7 @@ export default function Input({
 
 Input.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   ariaLabelledby: PropTypes.string,
   type: PropTypes.string,
   defaultValue: PropTypes.string,
