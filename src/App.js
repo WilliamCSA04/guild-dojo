@@ -60,8 +60,8 @@ function App() {
           type="password"
           ariaLabel="confirm password"
         />
-        <SubmitButton type="submit" ariaLabel="enviar formulário">
-          Enviar
+        <SubmitButton type="submit" ariaLabel="Submit form">
+          Send
         </SubmitButton>
       </Form>
     </Main>
