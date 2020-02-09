@@ -16,19 +16,44 @@ const Form = styled.form`
   margin: auto;
   * {
     width: 15rem;
-    margin: 1rem;
+    margin: 0 1rem;
   }
+  label {
+    margin-top: 0.5rem;
+    &:first-of-type {
+      margin-top: 1rem;
+    }
+  }
+  input {
+    margin-bottom: 0.5rem;
+    &:last-of-type {
+      margin-bottom: 1rem;
+    }
+  }
+`;
+
+const Label = styled.label`
+  color: ${props => props.theme.colors.font};
 `;
 
 function App() {
   return (
     <Main>
       <Form>
-        <Input />
-        <Input />
-        <Input type="email" ariaLabel="email" />
-        <Input type="password" ariaLabel="password" />
-        <Input type="password" ariaLabel="confirm password" />
+        <Label htmlFor="name">Name</Label>
+        <Input id="name" ariaLabel="name" />
+        <Label htmlFor="age">Age</Label>
+        <Input id="age" type="number" ariaLabel="age" />
+        <Label htmlFor="email">Email</Label>
+        <Input id="email" type="email" ariaLabel="email" />
+        <Label htmlFor="password">Password</Label>
+        <Input id="password" type="password" ariaLabel="password" />
+        <Label htmlFor="confirm passowrd">Confirm Password</Label>
+        <Input
+          id="confirmPassword"
+          type="password"
+          ariaLabel="confirm password"
+        />
         <Button type="submit" ariaLabel="enviar formulário">
           Enviar
         </Button>
