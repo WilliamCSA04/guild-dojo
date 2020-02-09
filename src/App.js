@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { shade } from "polished";
 import Input from "./components/Input";
 import Button from "./components/Button";
 
@@ -13,7 +14,13 @@ const Main = styled.main`
 
 const Form = styled.form`
   display: grid;
+  place-items: center;
   margin: auto;
+  border-radius: 0.2rem;
+  background: ${props => shade(0.2, props.theme.colors.background)};
+  -webkit-box-shadow: 0px 10px 22px -3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 10px 22px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 10px 22px -3px rgba(0, 0, 0, 0.4);
   * {
     width: 15rem;
     margin: 0 1rem;
@@ -25,10 +32,15 @@ const Form = styled.form`
     }
   }
   input {
+    background: ${props => shade(0.5, props.theme.colors.background)};
+    color: ${props => props.theme.colors.font};
     margin-bottom: 0.5rem;
     &:last-of-type {
       margin-bottom: 1rem;
     }
+  }
+  button {
+    margin: 1rem;
   }
 `;
 
