@@ -1,6 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
+const DefaultInput = styled.input`
+  border-radius: 0.2rem;
+  border: none;
+  padding: 0 0.5rem;
+  -moz-appearance: textfield;
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+`;
 export default function Input({
   id,
   className,
@@ -11,7 +21,7 @@ export default function Input({
   placeholder
 }) {
   return (
-    <input
+    <DefaultInput
       id={id}
       className={className}
       type={type}
