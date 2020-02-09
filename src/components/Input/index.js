@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function Input({
+  id,
   className,
   type,
   ariaLabel,
@@ -11,6 +12,7 @@ export default function Input({
 }) {
   return (
     <input
+      id={id}
       className={className}
       type={type}
       ariaLabel={ariaLabel}
@@ -23,6 +25,7 @@ export default function Input({
 
 Input.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
+  id: PropTypes.string,
   ariaLabelledby: PropTypes.string,
   type: PropTypes.string,
   defaultValue: PropTypes.string,
