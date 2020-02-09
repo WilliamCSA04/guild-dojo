@@ -7,7 +7,7 @@ export default function Input({
   ariaLabel,
   ariaLabelledby,
   defaultValue,
-  placehoder
+  placeholder
 }) {
   return (
     <input
@@ -16,7 +16,7 @@ export default function Input({
       ariaLabel={ariaLabel}
       ariaLabelledby={ariaLabelledby}
       defaultValue={defaultValue}
-      placeholder={placehoder}
+      placeholder={placeholder}
     />
   );
 }
@@ -26,12 +26,12 @@ Input.propTypes = {
   ariaLabelledby: PropTypes.string,
   type: PropTypes.string,
   defaultValue: PropTypes.string,
-  placehoder: PropTypes.string
+  placeholder: PropTypes.string
 };
 
 Input.defaultProps = {
   ariaLabelledby: "",
   type: "text",
   defaultValue: "",
-  placehoder: ""
+  placeholder: ""
 };
