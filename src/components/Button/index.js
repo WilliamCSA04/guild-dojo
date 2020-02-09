@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
+const DefaultButton = styled.button`
+  border: none;
+  border-radius: 0.2rem;
+`;
 export default function Button({
   className,
   children,
@@ -9,14 +14,14 @@ export default function Button({
   ariaLabelledby
 }) {
   return (
-    <button
+    <DefaultButton
       type={type}
       className={className}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
     >
       {children}
-    </button>
+    </DefaultButton>
   );
 }
 

@@ -36,6 +36,12 @@ const Label = styled.label`
   color: ${props => props.theme.colors.font};
 `;
 
+const SubmitButton = styled(Button)`
+  background: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.font};
+  font-weight: bold;
+`;
+
 function App() {
   return (
     <Main>
@@ -54,9 +60,9 @@ function App() {
           type="password"
           ariaLabel="confirm password"
         />
-        <Button type="submit" ariaLabel="enviar formulário">
+        <SubmitButton type="submit" ariaLabel="enviar formulário">
           Enviar
-        </Button>
+        </SubmitButton>
       </Form>
     </Main>
   );
