@@ -58,13 +58,32 @@ export const Context = createContext({});
 
 function App() {
   const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const inputsContext = {
     name: {
       value: name,
       onChange: setName
+    },
+    age: {
+      value: age,
+      onChange: setAge
+    },
+    email: {
+      value: email,
+      onChange: setEmail
+    },
+    password: {
+      value: password,
+      onChange: setPassword
+    },
+    confirmPassword: {
+      value: confirmPassword,
+      onChange: setConfirmPassword
     }
   };
-  console.log(name);
   return (
     <Main>
       <Form>
