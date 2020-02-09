@@ -54,7 +54,7 @@ function App() {
         <Input id="email" type="email" ariaLabel="email" />
         <Label htmlFor="password">Password</Label>
         <Input id="password" type="password" ariaLabel="password" />
-        <Label htmlFor="confirm passowrd">Confirm Password</Label>
+        <Label htmlFor="confirmPassword">Confirm Password</Label>
         <Input
           id="confirmPassword"
           type="password"
