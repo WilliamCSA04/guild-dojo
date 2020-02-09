@@ -5,6 +5,7 @@ import styled from "styled-components";
 const DefaultButton = styled.button`
   border: none;
   border-radius: 0.2rem;
+  cursor: pointer;
 `;
 export default function Button({
   className,
