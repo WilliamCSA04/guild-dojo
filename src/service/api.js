@@ -31,13 +31,8 @@ export function validatePassword(
 }
 
 export default function buildMock(params) {
-  const {
-    password,
-    confirmPassword,
-    passwordLength,
-    ...requestParams
-  } = params;
-  const { name, email, age } = requestParams;
+  const { passwordLength, ...requestParams } = params;
+  const { name, email, age, password, confirmPassword } = requestParams;
   const invalidName = !validateName(name);
   const invalidEmail = !validateEmail(email);
   const invalidAge = !validateAge(age);

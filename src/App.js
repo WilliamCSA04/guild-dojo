@@ -75,10 +75,10 @@ function App() {
             age,
             email,
             password: sha1(password),
-            passwordLength: password.length,
             confirmPassword: sha1(confirmPassword)
           };
-          buildMock(params);
+          const mockParams = { passwordLength: password.length, ...params };
+          buildMock(mockParams);
           axios
             .post("/user", params)
             .then(res => {
