@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { shade } from "polished";
 import Input from "./components/Input";
@@ -54,55 +54,54 @@ const SubmitButton = styled(Button)`
   font-weight: bold;
 `;
 
-export const Context = createContext({});
-
 function App() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const inputsContext = {
-    name: {
-      value: name,
-      onChange: setName
-    },
-    age: {
-      value: age,
-      onChange: setAge
-    },
-    email: {
-      value: email,
-      onChange: setEmail
-    },
-    password: {
-      value: password,
-      onChange: setPassword
-    },
-    confirmPassword: {
-      value: confirmPassword,
-      onChange: setConfirmPassword
-    }
-  };
   return (
     <Main>
       <Form>
-        <Context.Provider value={inputsContext}>
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" ariaLabel="name" />
-          <Label htmlFor="age">Age</Label>
-          <Input id="age" type="number" ariaLabel="age" />
-          <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" ariaLabel="email" />
-          <Label htmlFor="password">Password</Label>
-          <Input id="password" type="password" ariaLabel="password" />
-          <Label htmlFor="confirmPassword">Confirm Password</Label>
-          <Input
-            id="confirmPassword"
-            type="password"
-            ariaLabel="confirm password"
-          />
-        </Context.Provider>
+        <Label htmlFor="name">Name</Label>
+        <Input
+          id="name"
+          ariaLabel="name"
+          defaultValue={name}
+          onChange={setName}
+        />
+        <Label htmlFor="age">Age</Label>
+        <Input
+          id="age"
+          type="number"
+          ariaLabel="age"
+          defaultValue={age}
+          onChange={setAge}
+        />
+        <Label htmlFor="email">Email</Label>
+        <Input
+          id="email"
+          type="email"
+          ariaLabel="email"
+          defaultValue={email}
+          onChange={setEmail}
+        />
+        <Label htmlFor="password">Password</Label>
+        <Input
+          id="password"
+          type="password"
+          ariaLabel="password"
+          defaultValue={password}
+          onChange={setPassword}
+        />
+        <Label htmlFor="confirmPassword">Confirm Password</Label>
+        <Input
+          id="confirmPassword"
+          type="password"
+          ariaLabel="confirm password"
+          defaultValue={confirmPassword}
+          onChange={setConfirmPassword}
+        />
         <SubmitButton type="submit" ariaLabel="Submit form">
           Send
         </SubmitButton>
