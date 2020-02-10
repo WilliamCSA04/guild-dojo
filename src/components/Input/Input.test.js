@@ -7,7 +7,7 @@ describe("<Input /> snapshot", () => {
     const container = render(
       <Input ariaLabel="Testing input" onChange={() => {}} />
     );
-    expect(container.baseElement).toMatchSnapshot();
+    expect(container.asFragment()).toMatchSnapshot();
   });
 
   it("renders the component with defaultValue", () => {
@@ -18,6 +18,6 @@ describe("<Input /> snapshot", () => {
         defaultValue="Text"
       />
     );
-    expect(container.baseElement).toMatchSnapshot();
+    expect(container.asFragment()).toMatchSnapshot();
   });
 });

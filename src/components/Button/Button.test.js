@@ -7,7 +7,7 @@ describe("<Button /> snapshot", () => {
     const container = render(
       <Button ariaLabel="Testing">Testing Button</Button>
     );
-    expect(container.baseElement).toMatchSnapshot();
+    expect(container.asFragment()).toMatchSnapshot();
   });
 
   it("renders the component with ariaLabelledby", () => {
@@ -16,6 +16,6 @@ describe("<Button /> snapshot", () => {
         Testing Button
       </Button>
     );
-    expect(container.baseElement).toMatchSnapshot();
+    expect(container.asFragment()).toMatchSnapshot();
   });
 });
