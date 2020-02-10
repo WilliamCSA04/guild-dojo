@@ -49,7 +49,8 @@ const Label = styled.label`
 `;
 
 const SubmitButton = styled(Button)`
-  background: ${props => props.theme.colors.primary};
+  background: ${props =>
+    `linear-gradient(to right, ${props.theme.colors.primary}, ${props.theme.colors.secondary})`};
   color: ${props => props.theme.colors.font};
   font-weight: bold;
 `;
