@@ -4,6 +4,7 @@ exports[`<Input /> snapshot renders the component with default props 1`] = `
 <DocumentFragment>
   <input
     class="sc-AxjAm haaGhc"
+    data-testid="Test"
     placeholder=""
     type="text"
     value=""
@@ -15,6 +16,7 @@ exports[`<Input /> snapshot renders the component with defaultValue 1`] = `
 <DocumentFragment>
   <input
     class="sc-AxjAm haaGhc"
+    data-testid="Test"
     placeholder=""
     type="text"
     value="Text"

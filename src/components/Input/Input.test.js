@@ -5,7 +5,7 @@ import Input from ".";
 describe("<Input /> snapshot", () => {
   it("renders the component with default props", () => {
     const container = render(
-      <Input ariaLabel="Testing input" onChange={() => {}} />
+      <Input ariaLabel="Testing input" dataTestID="Test" onChange={() => {}} />
     );
     expect(container.asFragment()).toMatchSnapshot();
   });
@@ -14,6 +14,7 @@ describe("<Input /> snapshot", () => {
     const container = render(
       <Input
         ariaLabel="Testing input"
+        dataTestID="Test"
         onChange={() => {}}
         defaultValue="Text"
       />

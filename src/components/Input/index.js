@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-const DefaultInput = styled.input`
+const DefaultInput = styled.input.attrs(props => ({
+  "data-testid": props.dataTestID
+}))`
   border-radius: 0.2rem;
   border: none;
   padding: 0 0.5rem;
@@ -18,7 +20,8 @@ export default function Input({
   ariaLabel,
   ariaLabelledby,
   defaultValue,
-  placeholder
+  placeholder,
+  dataTestID
 }) {
   return (
     <DefaultInput
@@ -26,6 +29,7 @@ export default function Input({
       onChange={e => onChange(e.currentTarget.value)}
       className={className}
       type={type}
+      dataTestID={dataTestID}
       ariaLabel={ariaLabel}
       ariaLabelledby={ariaLabelledby}
       defaultValue={defaultValue}
@@ -37,6 +41,7 @@ export default function Input({
 Input.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  dataTestID: PropTypes.string.isRequired,
   id: PropTypes.string,
   ariaLabelledby: PropTypes.string,
   type: PropTypes.string,
