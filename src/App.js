@@ -5,6 +5,7 @@ import axios from "axios";
 import Input from "./components/Input";
 import Button from "./components/Button";
 import buildMock from "./service/api";
+import sha1 from "sha1";
 
 const Main = styled.main`
   height: 100vh;
@@ -73,8 +74,8 @@ function App() {
             name,
             age,
             email,
-            password,
-            confirmPassword
+            password: sha1(password),
+            confirmPassword: sha1(confirmPassword)
           };
           buildMock(params);
           axios
