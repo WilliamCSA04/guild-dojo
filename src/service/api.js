@@ -20,28 +20,41 @@ export function validateName(name) {
   return nameSize >= minimumLength;
 }
 
-export function validatePassword(password, confirmPassword) {
+export function validatePassword(
+  password,
+  confirmPassword,
+  passwordPreHashLength
+) {
   const arePasswordsEqual = confirmPassword === password;
-  const passwordLength = password.length;
   const minimumLength = 8;
-  return arePasswordsEqual && minimumLength <= passwordLength;
+  return arePasswordsEqual && minimumLength <= passwordPreHashLength;
 }
 
 export default function buildMock(params) {
-  const { name, email, age, password, confirmPassword } = params;
+  const {
+    password,
+    confirmPassword,
+    passwordLength,
+    ...requestParams
+  } = params;
+  const { name, email, age } = requestParams;
   const invalidName = !validateName(name);
   const invalidEmail = !validateEmail(email);
   const invalidAge = !validateAge(age);
-  const invalidPassword = !validatePassword(password, confirmPassword);
+  const invalidPassword = !validatePassword(
+    password,
+    confirmPassword,
+    passwordLength
+  );
   const hasErrors =
     invalidName || invalidEmail || invalidAge || invalidPassword;
   if (hasErrors) {
-    mock.onPost("/user", params).reply(418, {
-      users: params
+    mock.onPost("/user", requestParams).reply(418, {
+      users: requestParams
     });
   } else {
-    mock.onPost("/user", params).reply(200, {
-      users: params
+    mock.onPost("/user", requestParams).reply(200, {
+      users: requestParams
     });
   }
 }

@@ -75,6 +75,7 @@ function App() {
             age,
             email,
             password: sha1(password),
+            passwordLength: password.length,
             confirmPassword: sha1(confirmPassword)
           };
           buildMock(params);
