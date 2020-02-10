@@ -61,4 +61,48 @@ describe("<App /> inputs", () => {
     fireEvent.change(input, { target: { defaultValue: newValue } });
     expect(input.defaultValue).toBe(newValue);
   });
+  it("Age input should change whenever user interact with it", () => {
+    const container = render(
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    );
+    const input = container.getByTestId("age");
+    const newValue = "45";
+    fireEvent.change(input, { target: { defaultValue: newValue } });
+    expect(input.defaultValue).toBe(newValue);
+  });
+  it("Email input should change whenever user interact with it", () => {
+    const container = render(
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    );
+    const input = container.getByTestId("email");
+    const newValue = "arya@stark.com";
+    fireEvent.change(input, { target: { defaultValue: newValue } });
+    expect(input.defaultValue).toBe(newValue);
+  });
+  it("Password input should change whenever user interact with it", () => {
+    const container = render(
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    );
+    const input = container.getByTestId("password");
+    const newValue = "deUmàOito";
+    fireEvent.change(input, { target: { defaultValue: newValue } });
+    expect(input.defaultValue).toBe(newValue);
+  });
+  it("Confirm password input should change whenever user interact with it", () => {
+    const container = render(
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    );
+    const input = container.getByTestId("confirmPassword");
+    const newValue = "deUmàOito";
+    fireEvent.change(input, { target: { defaultValue: newValue } });
+    expect(input.defaultValue).toBe(newValue);
+  });
 });
