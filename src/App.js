@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { shade } from "polished";
+import axios from "axios";
 import Input from "./components/Input";
 import Button from "./components/Button";
+import buildMock from "./service/api";
 
 const Main = styled.main`
   height: 100vh;
@@ -63,7 +65,28 @@ function App() {
   const [confirmPassword, setConfirmPassword] = useState("");
   return (
     <Main>
-      <Form>
+      <Form
+        method="post"
+        onSubmit={e => {
+          e.preventDefault();
+          const params = {
+            name,
+            age,
+            email,
+            password,
+            confirmPassword
+          };
+          buildMock(params);
+          axios
+            .post("/user", params)
+            .then(res => {
+              alert("success");
+            })
+            .catch(res => {
+              alert("fail");
+            });
+        }}
+      >
         <Label htmlFor="name">Name</Label>
         <Input
           id="name"
