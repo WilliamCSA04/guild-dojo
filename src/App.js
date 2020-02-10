@@ -109,6 +109,7 @@ function App() {
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
+          required
           type="email"
           dataTestID="email"
           ariaLabel="email"
@@ -118,6 +119,7 @@ function App() {
         <Label htmlFor="password">Password</Label>
         <Input
           id="password"
+          required
           type="password"
           ariaLabel="password"
           dataTestID="password"
@@ -127,6 +129,7 @@ function App() {
         <Label htmlFor="confirmPassword">Confirm Password</Label>
         <Input
           id="confirmPassword"
+          required
           type="password"
           ariaLabel="confirm password"
           dataTestID="confirmPassword"

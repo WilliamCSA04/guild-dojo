@@ -9,6 +9,9 @@ export function validateEmail(email) {
 }
 
 export function validateAge(age) {
+  if (age.length === 0) {
+    return true;
+  }
   const isNumber = Number.isInteger(parseInt(age));
   const minimumAge = 18;
   return isNumber && age >= minimumAge;
@@ -16,8 +19,8 @@ export function validateAge(age) {
 
 export function validateName(name) {
   const nameSize = name.length;
-  const minimumLength = 2;
-  return nameSize >= minimumLength;
+  const invalidLength = 1;
+  return nameSize !== invalidLength;
 }
 
 export function validatePassword(

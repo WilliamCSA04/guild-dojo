@@ -6,9 +6,6 @@ const DefaultInput = styled.input.attrs(props => ({
 }))`
   border-radius: 0.2rem;
   border: none;
-  &:required {
-    box-shadow: 0 0 3px red;
-  }
   padding: 0 0.5rem;
   -moz-appearance: textfield;
   &::-webkit-inner-spin-button {
