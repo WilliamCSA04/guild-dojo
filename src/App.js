@@ -93,6 +93,7 @@ function App() {
         <Input
           id="name"
           ariaLabel="name"
+          dataTestID="name"
           defaultValue={name}
           onChange={setName}
         />
@@ -101,6 +102,7 @@ function App() {
           id="age"
           type="number"
           ariaLabel="age"
+          dataTestID="age"
           defaultValue={age}
           onChange={setAge}
         />
@@ -108,6 +110,7 @@ function App() {
         <Input
           id="email"
           type="email"
+          dataTestID="email"
           ariaLabel="email"
           defaultValue={email}
           onChange={setEmail}
@@ -117,6 +120,7 @@ function App() {
           id="password"
           type="password"
           ariaLabel="password"
+          dataTestID="password"
           defaultValue={password}
           onChange={setPassword}
         />
@@ -125,6 +129,7 @@ function App() {
           id="confirmPassword"
           type="password"
           ariaLabel="confirm password"
+          dataTestID="confirmPassword"
           defaultValue={confirmPassword}
           onChange={setConfirmPassword}
         />
