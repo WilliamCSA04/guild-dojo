@@ -14,11 +14,18 @@ export function validateAge(age) {
   return isNumber && age >= minimumAge;
 }
 
+export function validateName(name) {
+  const nameSize = name.length;
+  const minimumLength = 2;
+  return nameSize >= minimumLength;
+}
+
 export default function buildMock(params) {
-  const { email, age } = params;
+  const { name, email, age } = params;
+  const invalidName = !validateName(name);
   const invalidEmail = !validateEmail(email);
   const invalidAge = !validateAge(age);
-  const hasErrors = invalidEmail || invalidAge;
+  const hasErrors = invalidName || invalidEmail || invalidAge;
   if (hasErrors) {
     mock.onPost("/user", params).reply(418, {
       users: params
