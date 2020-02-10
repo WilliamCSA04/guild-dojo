@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> snapshot renders the component with default props 1`] = `
+<body>
+  <div>
+    <input
+      class="sc-AxjAm haaGhc"
+      placeholder=""
+      type="text"
+      value=""
+    />
+  </div>
+</body>
+`;
+
+exports[`<Input /> snapshot renders the component with defaultValue 1`] = `
+<body>
+  <div>
+    <input
+      class="sc-AxjAm haaGhc"
+      placeholder=""
+      type="text"
+      value="Text"
+    />
+  </div>
+</body>
+`;
