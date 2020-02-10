@@ -85,7 +85,7 @@ function App() {
               alert("success");
             })
             .catch(res => {
-              alert("fail");
+              alert("418 - I'm a teapot");
             });
         }}
       >

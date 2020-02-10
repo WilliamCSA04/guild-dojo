@@ -8,6 +8,7 @@ const DefaultInput = styled.input.attrs(props => ({
   border: 1px transparent solid;
   &:focus {
     border: 1px ${props => props.theme.colors.secondary} solid;
+    box-shadow: none;
   }
   padding: 0.1rem 0.5rem;
   -moz-appearance: textfield;
