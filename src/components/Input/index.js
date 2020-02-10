@@ -6,6 +6,9 @@ const DefaultInput = styled.input.attrs(props => ({
 }))`
   border-radius: 0.2rem;
   border: none;
+  &:required {
+    box-shadow: 0 0 3px red;
+  }
   padding: 0 0.5rem;
   -moz-appearance: textfield;
   &::-webkit-inner-spin-button {
@@ -14,6 +17,7 @@ const DefaultInput = styled.input.attrs(props => ({
 `;
 export default function Input({
   id,
+  required,
   className,
   onChange,
   type,
@@ -26,6 +30,7 @@ export default function Input({
   return (
     <DefaultInput
       id={id}
+      required={required}
       onChange={e => onChange(e.currentTarget.value)}
       className={className}
       type={type}
@@ -42,6 +47,7 @@ Input.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   dataTestID: PropTypes.string.isRequired,
+  required: PropTypes.bool,
   id: PropTypes.string,
   ariaLabelledby: PropTypes.string,
   type: PropTypes.string,
@@ -50,6 +56,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  required: false,
   ariaLabelledby: "",
   type: "text",
   defaultValue: "",
