@@ -1,6 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> snapshot renders the component without any changes 1`] = `
+exports[`<Button /> snapshot renders the component with ariaLabelledby 1`] = `
+<body>
+  <div>
+    <button
+      aria-label="Testing"
+      aria-labelledby="Testing"
+      class="sc-AxjAm eLfuFc"
+      type="button"
+    >
+      Testing Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<Button /> snapshot renders the component with default props 1`] = `
 <body>
   <div>
     <button
