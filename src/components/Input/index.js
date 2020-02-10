@@ -5,8 +5,11 @@ const DefaultInput = styled.input.attrs(props => ({
   "data-testid": props.dataTestID
 }))`
   border-radius: 0.2rem;
-  border: none;
-  padding: 0 0.5rem;
+  border: 1px transparent solid;
+  &:focus {
+    border: 1px ${props => props.theme.colors.secondary} solid;
+  }
+  padding: 0.1rem 0.5rem;
   -moz-appearance: textfield;
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
