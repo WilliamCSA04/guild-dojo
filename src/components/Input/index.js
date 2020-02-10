@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 const DefaultInput = styled.input`
@@ -36,7 +36,8 @@ export default function Input({
 
 Input.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  id: PropTypes.string,
   ariaLabelledby: PropTypes.string,
   type: PropTypes.string,
   defaultValue: PropTypes.string,
