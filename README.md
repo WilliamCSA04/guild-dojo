@@ -1,4 +1,4 @@
-This project is meant to be used for testing studing purposes.
+This project is meant to be used for testing studying purposes.
 
 ## Tech stack
 
