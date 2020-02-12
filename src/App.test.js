@@ -3,6 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import App from "./App";
 import theme from "./styles";
+import buildMock from "./service/api";
 
 describe("<App /> inputs", () => {
   it("App must have one name input", () => {
@@ -104,5 +105,19 @@ describe("<App /> inputs", () => {
     const newValue = "deUmàOito";
     fireEvent.change(input, { target: { defaultValue: newValue } });
     expect(input.defaultValue).toBe(newValue);
+  });
+});
+
+describe("<App /> Submitions", () => {
+  it("Form should trigger an submit", () => {
+    const onSubmit = jest.fn();
+    const container = render(
+      <ThemeProvider theme={theme}>
+        <App onSubmit={onSubmit} />
+      </ThemeProvider>
+    );
+    const button = container.getByTestId("submit");
+    fireEvent.submit(button);
+    expect(onSubmit).toBeCalled();
   });
 });

@@ -60,38 +60,35 @@ const SubmitButton = styled(Button)`
   font-weight: bold;
 `;
 
-function App() {
+function App({ onSubmit }) {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const handleSubmit = e => {
+    e.preventDefault();
+    const params = {
+      name,
+      age,
+      email,
+      password: sha1(password),
+      confirmPassword: sha1(confirmPassword)
+    };
+    const mockParams = { passwordLength: password.length, ...params };
+    buildMock(mockParams);
+    axios
+      .post("/user", params)
+      .then(res => {
+        alert("success");
+      })
+      .catch(res => {
+        alert("418 - I'm a teapot");
+      });
+  };
   return (
     <Main>
-      <Form
-        method="post"
-        dataTestID="form"
-        onSubmit={e => {
-          e.preventDefault();
-          const params = {
-            name,
-            age,
-            email,
-            password: sha1(password),
-            confirmPassword: sha1(confirmPassword)
-          };
-          const mockParams = { passwordLength: password.length, ...params };
-          buildMock(mockParams);
-          axios
-            .post("/user", params)
-            .then(res => {
-              alert("success");
-            })
-            .catch(res => {
-              alert("418 - I'm a teapot");
-            });
-        }}
-      >
+      <Form method="post" dataTestID="form" onSubmit={onSubmit || handleSubmit}>
         <Label htmlFor="name">Name</Label>
         <Input
           id="name"
