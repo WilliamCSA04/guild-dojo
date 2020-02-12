@@ -136,7 +136,7 @@ function App() {
           defaultValue={confirmPassword}
           onChange={setConfirmPassword}
         />
-        <SubmitButton type="submit" ariaLabel="Submit form">
+        <SubmitButton type="submit" ariaLabel="Submit form" dataTestID="submit">
           Send
         </SubmitButton>
       </Form>
