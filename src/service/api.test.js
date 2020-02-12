@@ -17,4 +17,7 @@ describe("API requests", () => {
       .post("/user", data)
       .then(res => expect(res.data).toEqual({ users: data }));
   });
+  it("Should return success with only password, passwordLength, confirmPassword and email parameters being fullfilled", () => {});
+  it("Should return an error if name has length === 1 ", () => {});
+  it("Should return an error if passwordLength has length < 8 ", () => {});
 });

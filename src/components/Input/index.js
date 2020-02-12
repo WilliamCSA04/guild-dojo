@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 const DefaultInput = styled.input.attrs(props => ({
-  "data-testid": props.dataTestID
+  "data-testid": ""
 }))`
   border-radius: 0.2rem;
   border: 1px transparent solid;
