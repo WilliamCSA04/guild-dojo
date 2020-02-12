@@ -106,6 +106,15 @@ describe("<App /> inputs", () => {
     fireEvent.change(input, { target: { defaultValue: newValue } });
     expect(input.defaultValue).toBe(newValue);
   });
+  it("Name should start on focus", () => {
+    const container = render(
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    );
+    const input = container.getByTestId("name");
+    expect(input).toBe(document.activeElement);
+  });
 });
 
 describe("<App /> Submitions", () => {
