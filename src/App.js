@@ -96,6 +96,7 @@ function App({ onSubmit }) {
           dataTestID="name"
           defaultValue={name}
           onChange={setName}
+          autoFocus={true}
         />
         <Label htmlFor="age">Age</Label>
         <Input

@@ -21,6 +21,7 @@ export default function Input({
   required,
   className,
   onChange,
+  autoFocus,
   type,
   ariaLabel,
   ariaLabelledby,
@@ -34,6 +35,7 @@ export default function Input({
       required={required}
       onChange={e => onChange(e.currentTarget.value)}
       className={className}
+      autoFocus={autoFocus}
       type={type}
       dataTestID={dataTestID}
       ariaLabel={ariaLabel}
@@ -48,6 +50,7 @@ Input.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   dataTestID: PropTypes.string.isRequired,
+  autoFocus: PropTypes.bool,
   required: PropTypes.bool,
   id: PropTypes.string,
   ariaLabelledby: PropTypes.string,
@@ -59,6 +62,7 @@ Input.propTypes = {
 Input.defaultProps = {
   required: false,
   ariaLabelledby: "",
+  autoFocus: false,
   type: "text",
   defaultValue: "",
   placeholder: ""
