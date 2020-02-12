@@ -15,7 +15,9 @@ const Main = styled.main`
   background: ${props => props.theme.colors.background};
 `;
 
-const Form = styled.form`
+const Form = styled.form.attrs(props => ({
+  "data-testid": props.dataTestID
+}))`
   display: grid;
   place-items: center;
   margin: auto;
@@ -68,6 +70,7 @@ function App() {
     <Main>
       <Form
         method="post"
+        dataTestID="form"
         onSubmit={e => {
           e.preventDefault();
           const params = {
