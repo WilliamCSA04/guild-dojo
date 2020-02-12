@@ -6,6 +6,7 @@ exports[`<Button /> snapshot renders the component with ariaLabelledby 1`] = `
     aria-label="Testing"
     aria-labelledby="Testing"
     class="sc-AxjAm eLfuFc"
+    data-testid="testing"
     type="button"
   >
     Testing Button
@@ -19,6 +20,7 @@ exports[`<Button /> snapshot renders the component with default props 1`] = `
     aria-label="Testing"
     aria-labelledby=""
     class="sc-AxjAm eLfuFc"
+    data-testid="testing"
     type="button"
   >
     Testing Button

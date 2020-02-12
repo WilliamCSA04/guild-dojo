@@ -5,14 +5,16 @@ import Button from ".";
 describe("<Button /> snapshot", () => {
   it("renders the component with default props", () => {
     const container = render(
-      <Button ariaLabel="Testing">Testing Button</Button>
+      <Button ariaLabel="Testing" dataTestID="testing">
+        Testing Button
+      </Button>
     );
     expect(container.asFragment()).toMatchSnapshot();
   });
 
   it("renders the component with ariaLabelledby", () => {
     const container = render(
-      <Button ariaLabel="Testing" ariaLabelledby="Testing">
+      <Button ariaLabel="Testing" ariaLabelledby="Testing" dataTestID="testing">
         Testing Button
       </Button>
     );
